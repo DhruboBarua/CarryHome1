@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Carry Home - Shop at your house!</title>
+
+  <!-- Bootstrap core CSS -->
+
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/shop-homepage.css" rel="stylesheet">
+<!--
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+-->
+  <!-- main css-->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- font awesome-->
+  <link rel="stylesheet" href="css/all.css">
+
+</head>
+
+<body>
+
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-sm bg-light navbar-light">
+
+      <a href="#" class="brand-logo">
+        <img src="img1/logo2.jpg" style="width: 180px; margin-top: 10px;">
+      </a>
+      <div class="collapse navbar-collapse" id="myNav">
+      <ul id="navbar-nav mx-auto text-capitalize">
+          <li class="logged-in" style = "display: none;">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
+          </li>
+          <li class="logged-in" style = "display: none;">
+            <a href="#" class="grey-text" id="logout">Logout</a>
+          </li>
+          <li class="logged-in" style = "display: none;">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-create">Contact us</a>
+          </li>
+          <li class="logged-out" style = "display: none;">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
+          </li>
+          <li class="logged-out" style = "display: none;">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
+          </li>
+
+      </ul>
+
+
+
+    <div class="nav-info-items d-none d-lg-flex ">
+      <!-- single info -->
+      <div class="nav-info align-items-center d-flex justify-content-between mx-lg-5">
+        <span class="info-icon mx-lg-3"><i class="fas fa-phone"></i></span>
+        <p class="mb-0">+ 8801679-319027</p>
+      </div>
+      <!-- end of single info -->
+      <!-- single info -->
+      <div id="cart-info" class="nav-info align-items-center cart-info d-flex justify-content-between mx-lg-5">
+        <span class="cart-info__icon mr-lg-3"><i class="fas fa-shopping-cart"></i></span>
+        <p class="mb-0 text-capitalize"><span id="item-count">0 </span> items - $<span class="item-total">0.00</span></p>
+      </div>
+      <!-- end of single info -->
+    </div>
+
+  </div>
+    <!--
+    <div id = "cart-info" class = "nav-info align-items-center- cart-info d-flex justify-content-between mx-lg-5">
+      <span class "cart-info__icon"><i class = "fas fa-shopping-cart" </i></span>
+      <p class = "mb-0 text-capitalize">
+      <span id = "item-count">2 </span>items - $<span class = "item-total">10.49</span>
+      </p>
+    </div>
+-->
+
+
+  </nav>
+  <!-- cartinfo -->
+  <div class="container-fluid">
+
+    <div class="row max-height justify-content-center align-items-center">
+      <div class="col-10 mx-auto banner text-center">
+        <h1 class="text-capitalize">welcome to <strong class="banner-title ">Carry Home</strong></h1>
+        
+
+      </div>
+      <div id="cart" class="cart">
+        <!-- cart item -->
+      <div class="cart-item d-flex justify-content-between text-capitalize my-3">
+        <img src="img-cart/kurkure.jpg" class="img-fluid rounded-circle" id="item-img" alt="">
+        <div class="item-text">
+
+          <p id="cart-item-title" class="font-weight-bold mb-0">cart item</p>
+          <span>$</span>
+          <span id="cart-item-price" class="cart-item-price" class="mb-0">0.00</span>
+        </div>
+        <a href="#" id='cart-item-remove' class="cart-item-remove">
+          <i class="fas fa-trash"></i>
+        </a>
+      </div>
+      <!--end of  cart item -->
+      <!-- cart item -->
+      <div class="cart-item d-flex justify-content-between text-capitalize my-3">
+        <img src="img-cart/beef.jpg" class="img-fluid rounded-circle" id="item-img" alt="">
+        <div class="cart-item-text">
+
+          <p id="cart-item-title" class="font-weight-bold mb-0">cart item</p>
+          <span>$</span>
+          <span id="cart-item-price" class="cart-item-price" class="mb-0">0.00</span>
+        </div>
+        <a href="#" id='cart-item-remove' class="cart-item-remove">
+          <i class="fas fa-trash"></i>
+        </a>
+      </div>
+      <!--end of  cart item -->
+      <!-- cart total -->
+      <div class="cart-total-container d-flex justify-content-around text-capitalize mt-5">
+        <h5>total</h5>
+        <h5> $ <strong id="cart-total" class="font-weight-bold">10.00</strong> </h5>
+      </div>
+      <!--end cart total -->
+      <!-- cart buttons -->
+      <div class="cart-buttons-container mt-3 d-flex justify-content-between">
+        <a href="#" id="clear-cart" class="btn btn-outline-secondary btn-black text-uppercase">clear cart</a>
+        <a href="#" class="btn btn-outline-secondary text-uppercase btn-pink">checkout</a>
+      </div>
+      <!--end of  cart buttons -->
+      <!--  -->
+    </div>
+</div>
+  </div>
+
+
+
+<!-- SIGN UP MODAL -->
+  <div id="modal-signup" class="modal">
+    <div class="modal-content">
+      <h4>Sign up</h4><br />
+      <form id="signup-form">
+        <div class="input-field">
+          <input type="email" id="signup-email" required />
+          <label for="signup-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="signup-password" required />
+          <label for="signup-password">Choose password</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Sign up</button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- LOGIN MODAL -->
+  <div id="modal-login" class="modal">
+    <div class="modal-content">
+      <h4>Login</h4><br />
+      <form id="login-form">
+        <div class="input-field">
+          <input type="email" id="login-email" required />
+          <label for="login-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="login-password" required />
+          <label for="login-password">Your password</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ACCOUNT MODAL -->
+  <div id="modal-account" class="modal">
+    <div class="modal-content center-align">
+      <h4>Account details</h4><br />
+      <div class="account-details"></div>
+    </div>
+  </div>
+
+  <!-- CREATE GUIDE MODAL -->
+  <div id="modal-create" class="modal">
+    <div class="modal-content">
+      <h4>Contact Us</h4><br />
+      <form id="create-form">
+        <div class="input-field">
+          <input type="text" id="name" required>
+          <label for="title">Name</label>
+        </div>
+        <div class="input-field">
+          <textarea id="message" class="materialize-textarea" required></textarea>
+          <label for="message">Message</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Send</button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- Page Content -->
+
+  <!-- header -->
+  <!-- about us -->
+
+  <!-- end of about us -->
+
+
+  <!-- store -->
+  <section id="store" class="store py-5">
+    <div class="container">
+      <!-- section title -->
+
+      <!-- end of section title -->
+      <!--filter buttons -->
+
+      <!-- search box -->
+
+      <!--end of filter buttons -->
+      <!-- store  items-->
+      <div class="row" class="store-items" id="store-items">
+        <!-- single item -->
+        <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets" data-item="sweets">
+          <div class="card ">
+            <div class="img-container">
+              <img src="img/beef.jpg" class="card-img-top store-img" alt="">
+              <span class="store-item-icon">
+                <i class="fas fa-shopping-cart"></i>
+              </span>
+            </div>
+            <div class="card-body">
+              <div class="card-text d-flex justify-content-between text-capitalize">
+                <h5 id="store-item-name">beef</h5>
+                <h5 class="store-item-value">$ <strong id="store-item-price" class="font-weight-bold">5</strong></h5>
+
+              </div>
+            </div>
+
+
+          </div>
+          <!-- end of card-->
+        </div>
+        <!--end of single store item-->
+        <!-- single item -->
+        <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item cupcakes" data-item="cupcakes">
+          <div class="card ">
+            <div class="img-container">
+              <img src="img/orange.jpg" class="card-img-top store-img" alt="">
+              <span class="store-item-icon">
+                <i class="fas fa-shopping-cart"></i>
+              </span>
+            </div>
+            <div class="card-body">
+              <div class="card-text d-flex justify-content-between text-capitalize">
+                <h5 id="store-item-name">orange 1 kg</h5>
+                <h5 class="store-item-value">$ <strong id="store-item-price" class="font-weight-bold">5</strong></h5>
+
+              </div>
+            </div>
+
+
+          </div>
+          <!-- end of card-->
+        </div>
+        <!--end of single store item-->
+        <!-- single item -->
+        <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item cakes" data-item="cakes">
+          <div class="card ">
+            <div class="img-container">
+              <img src="img/radhuni chili.jpg" class="card-img-top store-img" alt="">
+              <span class="store-item-icon">
+                <i class="fas fa-shopping-cart"></i>
+              </span>
+            </div>
+            <div class="card-body">
+              <div class="card-text d-flex justify-content-between text-capitalize">
+                <h5 id="store-item-name">radhuni chili</h5>
+                <h5 class="store-item-value">$ <strong id="store-item-price" class="font-weight-bold">5</strong></h5>
+
+              </div>
+            </div>
+
+
+          </div>
+          <!-- end of card-->
+        </div>
+        <!--end of single store item-->
+        <!-- single item -->
+        <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item doughnuts" data-item="dougnuts">
+          <div class="card ">
+            <div class="img-container">
+              <img src="img/coca cola.jpg" class="card-img-top store-img" alt="">
+              <span class="store-item-icon">
+                <i class="fas fa-shopping-cart"></i>
+              </span>
+            </div>
+            <div class="card-body">
+              <div class="card-text d-flex justify-content-between text-capitalize">
+                <h5 id="store-item-name">coca cola</h5>
+                <h5 class="store-item-value">$ <strong id="store-item-price" class="font-weight-bold">5</strong></h5>
+
+              </div>
+            </div>
+
+
+          </div>
+          <!-- end of card-->
+        </div>
+        <!--end of single store item-->
+        <!-- single item -->
+        <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets" data-item="sweets">
+          <div class="card ">
+            <div class="img-container">
+              <img src="img/kurkure.jpg" class="card-img-top store-img" alt="">
+              <span class="store-item-icon">
+                <i class="fas fa-shopping-cart"></i>
+              </span>
+            </div>
+            <div class="card-body">
+              <div class="card-text d-flex justify-content-between text-capitalize">
+                <h5 id="store-item-name">kurkure</h5>
+                <h5 class="store-item-value">$ <strong id="store-item-price" class="font-weight-bold">10</strong></h5>
+
+              </div>
+            </div>
+
+
+          </div>
+          <!-- end of card-->
+        </div>
+        <!--end of single store item-->
+        <!-- single item -->
+        <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item cupcakes" data-item="cupcakes">
+          <div class="card ">
+            <div class="img-container">
+              <img src="img/cat food.jpg" class="card-img-top store-img" alt="">
+              <span class="store-item-icon">
+                <i class="fas fa-shopping-cart"></i>
+              </span>
+            </div>
+            <div class="card-body">
+              <div class="card-text d-flex justify-content-between text-capitalize">
+                <h5 id="store-item-name">cat food</h5>
+                <h5 class="store-item-value">$ <strong id="store-item-price" class="font-weight-bold">10</strong></h5>
+
+              </div>
+            </div>
+
+
+          </div>
+          <!-- end of card-->
+        </div>
+        <!--end of single store item-->
+
+      </div>
+  </section>
+  <!--end of store items -->
+
+            <!-- end of card-->
+  <!-- Footer -->
+  <footer class="footer footer-expand-sm bg-light footer-light">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Carry Home 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-firestore.js"></script>
+
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDVO0pXi3gcBhRiO87xtgrk6ld35Z37vyE",
+    authDomain: "carryhome9027.firebaseapp.com",
+    databaseURL: "https://carryhome9027.firebaseio.com",
+    projectId: "carryhome9027",
+    storageBucket: "carryhome9027.appspot.com",
+    messagingSenderId: "885075634524",
+    appId: "1:885075634524:web:a186934d52da9c08a37999"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+
+  //update firestore settings
+
+  db.settings({ timestampsInSnapshots: true });
+
+
+</script>
+  <script src="scripts/app.js"></script>
+  <!-- Bootstrap core JavaScript -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="scripts/auth.js"></script>
+  <script src="scripts/index.js"></script>
+
+  <script src="scripts/jquery-3.3.1.min.js"></script>
+  <script src="scripts/bootstarp.bundle.min.js"></script>
+
+</body>
+
+</html>
